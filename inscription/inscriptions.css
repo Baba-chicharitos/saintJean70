@@ -1,0 +1,263 @@
+/* ###############################################################//
+// ###                                                          ##//
+// ###         Initialisation à 0 du document html/css          ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###         Déclaration des différentes font du doc          ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+@font-face {
+  font-family: "medCut";
+  src: url(../media/fonts-1/BrilliantCut/Brilliant_Cut_Pro_Medium.ttf);
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###     Style de la barre de navigation et ses composants    ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-bottom: 2px solid white;
+}
+
+.logoStJean {
+  grid-column: 1/3;
+  grid-row: 1/4;
+  height: 100%;
+  justify-self: center;
+}
+
+.lienAccueil {
+  grid-column: 4/6;
+  grid-row: 1/4;
+  justify-self: center;
+  align-self: center;
+}
+
+.lienInscription {
+  grid-column: 6/8;
+  grid-row: 1/4;
+  justify-self: center;
+  align-self: center;
+}
+
+nav a {
+  color: azure;
+  font-style: none;
+  text-decoration: none;
+  font-family: "medCut", sans-serif;
+  font-size: 25px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###       Style du burger menu de la bar de navigation       ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+.burger {
+  grid-column: 10/11;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###          Style du formulaire qui envoie en php           ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+form {
+  height: 65vh;
+  width: 25vw;
+  margin-top: 10vh;
+  border-radius: 2vw;
+  background-color: black;
+  border: 1px solid white;
+  display: grid;
+  grid-template-columns: 2vw repeat(5, 1fr) 2vw;
+  grid-template-rows: 2vw repeat(20, 1fr) 2vw;
+}
+
+img {
+  grid-column: 3/6;
+  grid-row: 2/10;
+  height: 100%;
+  justify-self: center;
+}
+
+form label {
+  color: white;
+}
+
+.formNom {
+  grid-column: 2/4;
+  grid-row: 10/12;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+input {
+  width: 100%;
+}
+
+.formPrenom {
+  grid-column: 5/7;
+  grid-row: 10/12;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.formMail {
+  grid-column: 2/5;
+  grid-row: 13/15;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.formMail {
+  width: 90%;
+}
+
+.addPlayers {
+  grid-column: 2/8;
+  grid-row: 15/17;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1vw;
+}
+
+.addPlayers input {
+  max-width: 1vw;
+}
+
+.nbParticipant {
+  grid-column: 5/7;
+  grid-row: 13/15;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.textField {
+  grid-column: 2/7;
+  grid-row: 17/18;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.textField input {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  text-align: top;
+}
+
+button {
+  grid-column: 3/6;
+  grid-row: 20/23;
+  height: 60%;
+  border: 3px solid white;
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+}

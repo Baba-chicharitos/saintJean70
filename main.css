@@ -1,0 +1,180 @@
+/* ###############################################################//
+// ###                                                          ##//
+// ###         Initialisation à 0 du document html/css          ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100vw;
+
+  background-color: red;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###         Déclaration des différentes font du doc          ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+@font-face {
+  font-family: "medCut";
+  src: url(media/fonts-1/BrilliantCut/Brilliant_Cut_Pro_Medium.ttf);
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###     Style de la barre de navigation et ses composants    ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.logoStJean {
+  grid-column: 1/3;
+  grid-row: 1/4;
+  height: 100%;
+  justify-self: center;
+}
+
+.lienAccueil {
+  grid-column: 4/6;
+  grid-row: 1/4;
+  justify-self: center;
+  align-self: center;
+}
+
+.lienInscription {
+  grid-column: 6/8;
+  grid-row: 1/4;
+  justify-self: center;
+  align-self: center;
+}
+
+nav a {
+  color: azure;
+  font-style: none;
+  text-decoration: none;
+  font-family: "medCut", sans-serif;
+  font-size: 25px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###       Style du burger menu de la bar de navigation       ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+.burger {
+  grid-column: 10/11;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* ###############################################################//
+// ###                                                          ##//
+// ###        Style du herobanner en dégradé et l'image         ##//
+// ###                                                          ##//
+// ###############################################################*/
+
+.herobanner {
+  height: 85vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  overflow: hidden;
+}
+
+.herobanner img {
+  width: 100%;
+  grid-column: 1/6;
+  grid-row: 1/6;
+  z-index: 1;
+}
+
+.herobanner .degrade {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  grid-column: 1/6;
+  grid-row: 3/6;
+  background: linear-gradient(transparent, 20%, black);
+}

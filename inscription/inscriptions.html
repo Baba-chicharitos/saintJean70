@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S'enregistrer !</title>
+    <link rel="stylesheet" href="inscriptions.css" />
+  </head>
+  <body>
+    <nav>
+      <img
+        class="logoStJean"
+        src="../media/logoESSJF.PNG"
+        alt="Logo de saint jean du falga"
+      />
+
+      <a class="lienAccueil" href="../index.html">Accueil</a>
+      <a class="lienInscription" href="inscriptions.html">Inscriptions</a>
+
+      <label class="burger" for="burger">
+        <input type="checkbox" id="burger" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </nav>
+    <form action="" method="post">
+      <img src="../media/logoESSJF.PNG" />
+      <div class="formNom">
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="user_name" />
+      </div>
+      <div class="formPrenom">
+        <label for="mail">Prenom:</label>
+        <input type="email" id="mail" name="user_mail" />
+      </div>
+      <div class="formMail">
+        <label for="msg">E-Mail:</label>
+        <input type="email" id="msg" name="user_message" />
+      </div>
+      <div class="nbParticipant">
+        <label for="nbParticipant"> Nb Participants : </label>
+        <select name="nbParticipantSelect" id="nbParticipantSelect">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+        </select>
+      </div>
+      <div class="addPlayers">
+        <label for="joueurs"
+          >Il y a des anciens ou actuels joueurs du club?
+        </label>
+        <input type="checkbox" id="joueurs" name="joueurs" />
+      </div>
+      <div id="textField" class="textField" style="display: none">
+        <label for="comment">Infos joueurs :</label><br />
+        <input type="text" placeholder="Flocage ; Numéro ; Année" />
+      </div>
+      <button type="submit">Envoyer</button>
+    </form>
+  </body>
+  <script>
+    document.getElementById("joueurs").addEventListener("change", function () {
+      const textField = document.getElementById("textField");
+      textField.style.display = this.checked ? "block" : "none";
+    });
+  </script>
+</html>
