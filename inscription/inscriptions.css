@@ -189,6 +189,13 @@ form a {
   border-radius: 15px;
 }
 
+p {
+  color: white;
+  font-family: "medCut", sans-serif;
+  text-decoration: underline;
+  margin-top: 5vh;
+}
+
 @media screen and (max-width: 1400px) {
   .logoStJean {
     grid-column: 1/5;
